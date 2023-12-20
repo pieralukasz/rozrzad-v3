@@ -47,7 +47,6 @@ const App: React.FC = () => {
 
     return (
         <AppView id="app">
-            <div>HELLO</div>
             {location.pathname !== '/' && location.pathname !== '/index.html' ? (
                 <BackButton variant="contained" onClick={() => handleBack()}>
                     Powrót
