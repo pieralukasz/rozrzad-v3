@@ -38,7 +38,7 @@ import {
   setEighthForm,
 } from '../../../slices/camForm/camFormSlice';
 import ValveResults from '../Valve/ValveResults';
-// import { saveJSONFileIntoFolder } from '../../../utils/downloadFile';
+import { saveJSONFileIntoFolder } from '../../../utils/downloadFile';
 import {
   CamFifthFormSchemaValue,
   CamFirstFormSchemaValue,
@@ -53,10 +53,7 @@ import {
   calculateFourthFormSchema,
   calculateSecondFormSchema,
   calculateSixthFormSchema,
-  calculateSkokKrzywki,
 } from './calculations';
-import { initialState } from '../../../slices/camForm/initialState';
-import { selectFile } from '../../../utils/selectFile';
 import { useHistory } from 'react-router-dom';
 import PoleWzniosuChart from './WzniosChart';
 
@@ -576,7 +573,7 @@ const CamContainer: React.FC<CamContainerProps> = ({ children, whichOne }) => {
       }
     });
 
-    // saveJSONFileIntoFolder('Krzywka', form);
+    saveJSONFileIntoFolder('Krzywka', form);
   };
 
   return (

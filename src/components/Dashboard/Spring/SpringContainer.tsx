@@ -30,7 +30,7 @@ import {
   calculateSecondFormSchema,
 } from './calculations';
 import ValveResults from '../Valve/ValveResults';
-// import { saveJSONFileIntoFolder } from '../../../utils/downloadFile';
+import { saveJSONFileIntoFolder } from '../../../utils/downloadFile';
 
 type SpringContainerProps = {
   whichOne: string;
@@ -168,7 +168,7 @@ const SpringContainer: React.FC<SpringContainerProps> = ({
       form[el] = parseFloat(form[el]);
     });
 
-    // saveJSONFileIntoFolder('Sprezyna', form);
+    saveJSONFileIntoFolder('Sprezyna', form);
   };
 
   return (
