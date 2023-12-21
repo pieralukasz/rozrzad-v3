@@ -1,12 +1,10 @@
-// In your React/Angular/Vue or any frontend code
-
-// import { ipcRenderer } from 'electron';
-
 export const selectFile = async () => {
   try {
     console.log('content');
-    // const data = await ipcRenderer.invoke('open-file-dialog');
-    // return JSON.parse(data);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const data = await window.electronAPI.openFileDialog();
+    return JSON.parse(data);
   } catch (err) {
     console.error(err);
     throw err;

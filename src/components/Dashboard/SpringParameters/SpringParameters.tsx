@@ -32,6 +32,9 @@ const SpringParameters: React.FC = () => {
     await selectFile().then(async x => {
       const obj: any = {};
 
+      console.log(x)
+
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       Object.keys(x).forEach(item => (obj[item] = x[item].toString()));
 

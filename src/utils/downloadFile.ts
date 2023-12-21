@@ -1,12 +1,8 @@
-// In your React/Angular/Vue or any frontend code
-
-// import { ipcRenderer } from 'electron';
-
 export const saveJSONFileIntoFolder = async (
   name: string,
   content: {
     wzniosZaworu?: string;
-    naprezeniaWGrzybkuZaworu?: string;
+    naprezeniaWGrzybkuZaworu?: string;a
     szerokoscPrzylgniZaworowej?: string;
     srednicaKanalu?: string;
     srednicaWewnetrznaPrzylgni?: string;
@@ -51,10 +47,14 @@ export const saveJSONFileIntoFolder = async (
 ) => {
   try {
       console.log('content', content);
-    // const result = await ipcRenderer.invoke('save-json-file', name, content);
-    // if (!result.success) {
-    //   console.error('Failed to save file.');
-    // }
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+      const result = await window.electronAPI.saveJsonFile(content);
+
+      console.log(result)
+    if (!result.success) {
+      console.error('Failed to save file.');
+    }
   } catch (err) {
     console.error(err);
   }

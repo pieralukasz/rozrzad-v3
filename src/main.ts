@@ -1,17 +1,53 @@
-import { app, BrowserWindow } from 'electron';
+import {app, BrowserWindow, dialog, ipcMain} from 'electron';
 import path from 'path';
+import fs from "fs";
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
+ipcMain.handle('save-json-file', async (event, content: any) => {
+  const options = {
+    title: 'Save file',
+    defaultPath: path.join(app.getPath('desktop'), 'myFile.json'), // You can change the default path and file name
+    buttonLabel: 'Save',
+    filters: [
+      { name: 'json', extensions: ['json'] },
+      { name: 'All Files', extensions: ['*'] },
+    ],
+  };
+
+  const { filePath } = await dialog.showSaveDialog(options);
+
+  if (filePath) {
+    fs.writeFileSync(filePath, JSON.stringify(content, null, 2));
+    return { success: true };
+  } else {
+    return { success: false };
+  }
+});
+
+ipcMain.handle('open-file-dialog', async () => {
+  const { filePaths } = await dialog.showOpenDialog({
+    properties: ['openFile'],
+  });
+
+  if (filePaths && filePaths.length > 0) {
+    return fs.readFileSync(filePaths[0], 'utf8');
+  } else {
+    throw new Error('No file selected.');
+  }
+});
+
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 900,
     webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: true,
       preload: path.join(__dirname, 'preload.js'),
     },
   });
