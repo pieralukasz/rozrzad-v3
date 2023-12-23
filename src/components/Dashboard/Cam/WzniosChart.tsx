@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import { BaseFormControlType } from '../../../validator/types';
-import { calculatePoleWzniosu } from './calculations';
 
-import { Line, Scatter } from 'react-chartjs-2';
+import { Scatter } from 'react-chartjs-2';
+import {Button} from "@material-ui/core";
+import {saveWzniosResults} from "../../../utils/saveWzniosResults";
 
 export const options = {
   responsive: true,
@@ -18,9 +18,6 @@ export const options = {
       min: 10,
       max: 180,
     },
-    // y: {
-    //   min: -1,
-    // },
   },
 };
 
@@ -29,7 +26,6 @@ type PoleWzniosuChartProps = {
 };
 
 const PoleWzniosuChart: React.FC<PoleWzniosuChartProps> = ({ points }) => {
-  console.log(points);
 
   const data = useMemo(
     () => ({
@@ -75,9 +71,25 @@ const PoleWzniosuChart: React.FC<PoleWzniosuChartProps> = ({ points }) => {
     []
   );
 
+  const reducedPoints = useMemo(() => {
+    return {
+      h: points[0].filter((_: any, i: number) => i % 2 === 0),
+      v: points[1].filter((_: any, i: number) => i % 2 === 0),
+      a: points[2].filter((_: any, i: number) => i % 2 === 0),
+    }
+  }, [points])
+
+
+
   return (
     <ChartView>
       <Scatter style={{ padding: 12 }} options={options} data={data as any} />
+      <ButtonCon>
+        <Button variant="contained" onClick={() => saveWzniosResults("wznios-zaworu", reducedPoints)}>
+          Pobierz wyniki
+        </Button>
+      </ButtonCon>
+
     </ChartView>
   );
 };
@@ -91,4 +103,11 @@ const ChartView = styled('div')`
   margin-bottom: 100px;
   background-color: white;
   border-radius: 4px;
+`;
+
+const ButtonCon = styled('div')`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 `;

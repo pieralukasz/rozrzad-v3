@@ -2,7 +2,7 @@ export const saveJSONFileIntoFolder = async (
   name: string,
   content: {
     wzniosZaworu?: string;
-    naprezeniaWGrzybkuZaworu?: string;a
+    naprezeniaWGrzybkuZaworu?: string;
     szerokoscPrzylgniZaworowej?: string;
     srednicaKanalu?: string;
     srednicaWewnetrznaPrzylgni?: string;
