@@ -21,6 +21,14 @@ Rozrzad-v3 is an Electron application developed as part of an engineering thesis
 
 Rozrzad-v3 is designed to help users manage and visualize timing belt schedules efficiently. The application provides an intuitive user interface built with React and Material-UI, ensuring a seamless user experience. The state management is handled using Redux Toolkit, which simplifies the process of managing complex state logic.
 
+### Home Page
+
+![Home Page](./overview/thesis-1.png)
+
+![Valve Form](./overview/thesis-2.png)
+
+More screenshots and documentation here: [Full Thesis MDX](./overview/Lucas%20Piera%20BE%20Thesis.md). Unfortunatelly it's written in Polish language.
+
 ### Key Features
 
 - **Timing Belt Schedule Management**: Easily create, edit, and delete timing belt schedules.
@@ -76,10 +84,6 @@ npm run package
 yarn package
 ```
 
-### Photos
-
-![Home Page](./overview/home_page.png)
-
 ### Documentation
 
-For more detailed documentation, please refer to my [Engineering Thesis Documentation](https://docs.google.com/document/d/1nOEDN9K-TVxDbau-u89w0ydMin6w64-WQAKN-v6lBoc/edit?tab=t.0).
+For more detailed documentation, please refer to my [Engineering Thesis Documentation](https://docs.google.com/document/d/1nOEDN9K-TVxDbau-u89w0ydMin6w64-WQAKN-v6lBoc/edit?tab=t.0)
