@@ -78,9 +78,7 @@ yarn package
 
 ### Photos
 
-![Home Page](https://drive.google.com/file/d/1HwFcmJhR_FZrH5HA3dRjSnNcxdw2K3lh/view?usp=drive_link)
-
-[]
+![Home Page](./overview/home_page.png)
 
 ### Documentation
 
