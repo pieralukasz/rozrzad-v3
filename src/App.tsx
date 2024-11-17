@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './style/App.css';
 import styled from 'styled-components';
-import { Switch, Link, useLocation, useHistory } from 'react-router-dom';
+import { Switch, useLocation, useHistory } from 'react-router-dom';
 import routes from './routes';
 import GenerateRouter from './routes/Router';
 import { Button } from '@material-ui/core';
@@ -40,6 +40,10 @@ const App: React.FC = () => {
       history.push('/');
     }
   };
+
+  useEffect(() => {
+    history.push('/')
+  }, []);
 
   return (
     <AppView>

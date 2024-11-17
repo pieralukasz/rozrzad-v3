@@ -28,7 +28,6 @@ const ROUTES: Config[] = [
   {
     path: '/index.html',
     key: 'DASHBOARD',
-    exact: true,
     component: Dashboard,
   },
   {
