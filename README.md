@@ -29,6 +29,10 @@ Rozrzad-v3 is designed to help users manage and visualize timing belt schedules 
 
 More screenshots and documentation here: [Full Thesis MDX](./overview/Lucas%20Piera%20BE%20Thesis.md). Unfortunatelly it's written in Polish language.
 
+### Documentation
+
+For more detailed documentation, please refer to my [Engineering Thesis Documentation](https://docs.google.com/document/d/1nOEDN9K-TVxDbau-u89w0ydMin6w64-WQAKN-v6lBoc/edit?tab=t.0)
+
 ### Key Features
 
 - **Timing Belt Schedule Management**: Easily create, edit, and delete timing belt schedules.
@@ -83,7 +87,3 @@ npm run package
 # or
 yarn package
 ```
-
-### Documentation
-
-For more detailed documentation, please refer to my [Engineering Thesis Documentation](https://docs.google.com/document/d/1nOEDN9K-TVxDbau-u89w0ydMin6w64-WQAKN-v6lBoc/edit?tab=t.0)
